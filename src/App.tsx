@@ -30,9 +30,10 @@ function App() {
   }, []);
 
   const scrollToCelebrations = () => {
-    document
-      .getElementById("celebrations")
-      ?.scrollIntoView({ behavior: "smooth" });
+    document.querySelector(".countdown-section")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (
