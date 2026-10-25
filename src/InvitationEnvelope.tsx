@@ -90,6 +90,22 @@ function InvitationEnvelope({ onOpen }: InvitationEnvelopeProps) {
           >
             <img src="/images/satin-bow.png" alt="" draggable="false" />
           </motion.button>
+
+          {!isOpening && (
+            <div className="ribbon-hint-position">
+              <motion.div
+                className="ribbon-hint"
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <span className="ribbon-hint-icon" aria-hidden="true">
+                  ↓
+                </span>
+                <span>Tap the ribbon to open</span>
+              </motion.div>
+            </div>
+          )}
         </div>
       </div>
     </motion.main>
