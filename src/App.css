@@ -1,0 +1,1306 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+:root {
+  font-family: "Inter", sans-serif;
+
+  color: #493324;
+  background: #fbf5e9;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --burgundy: #631022;
+  --deep-burgundy: #58061d;
+  --muted: #806957;
+  --gold: #b08d57;
+  --light-gold: #d8c29a;
+  --ivory: #fbf5e9;
+  --sage: #89947b;
+  --sage-dark: #66765c;
+
+  --display-font: "Cormorant Garamond", Georgia, serif;
+  --script-font: "Allura", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+body,
+button {
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.wedding-page {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: clip;
+  background: var(--ivory);
+}
+
+/* ========================================
+   SHARED TYPOGRAPHY
+======================================== */
+
+.eyebrow {
+  margin: 0;
+  color: #987344;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  line-height: 1.9;
+}
+
+.gold-divider,
+.venue-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 190px;
+  margin: 28px auto;
+
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.gold-divider::before,
+.gold-divider::after,
+.venue-divider::before,
+.venue-divider::after {
+  flex: 1;
+  height: 1px;
+  content: "";
+  background: var(--light-gold);
+}
+
+/* ========================================
+   HERO / MAIN INVITATION
+======================================== */
+
+.wedding-hero {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  padding: 48px 24px;
+
+  color: var(--deep-burgundy);
+  background-color: var(--ivory);
+  background-image: url("/images/wedding-background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: rgba(251, 245, 233, 0.12);
+  pointer-events: none;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+  text-align: center;
+}
+
+.hero-ornament {
+  margin: 16px 0;
+
+  color: var(--gold);
+  font-family: var(--display-font);
+  font-size: 40px;
+  line-height: 1;
+}
+
+.invitation-intro {
+  margin: 24px 0 18px;
+
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: 24px;
+  font-style: italic;
+}
+
+/* Couple's names */
+
+.hero-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+
+  margin: 0;
+
+  color: var(--deep-burgundy);
+  font-family: var(--script-font);
+  font-size: clamp(84px, 11vw, 120px);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.85;
+}
+
+.hero-ampersand {
+  margin: 8px 0;
+
+  color: var(--gold);
+  font-size: 0.48em;
+  font-style: italic;
+  line-height: 1;
+}
+
+/* Invitation message */
+
+.hero-message {
+  margin: 24px 0 0;
+
+  color: #806957;
+  font-family: var(--display-font);
+  font-size: clamp(19px, 2.2vw, 24px);
+  line-height: 1.7;
+}
+
+/* Wedding date */
+
+.hero-date {
+  margin-top: 32px;
+}
+
+.hero-date-label,
+.hero-location {
+  display: block;
+
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.hero-date > p {
+  margin: 13px 0;
+
+  color: var(--deep-burgundy);
+  font-family: var(--display-font);
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 500;
+
+  /* Reduced spacing around the date separators */
+  letter-spacing: 1px;
+  word-spacing: 0;
+}
+
+/* ========================================
+   SAGE-GREEN PILL BUTTON
+======================================== */
+
+.luxury-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-height: 46px;
+  margin-top: 32px;
+  padding: 0 27px;
+
+  color: #fffdf7;
+
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+
+  background: var(--burgundy);
+  border: 1px solid var(--deep-burgundy);
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease;
+}
+
+.luxury-button:hover {
+  color: var(--sage-dark);
+  background: transparent;
+  border-color: var(--deep-burgundy);
+  transform: translateY(-2px);
+}
+
+.luxury-button:active {
+  transform: translateY(0);
+}
+
+.luxury-button span {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Bottom monogram */
+
+.hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  margin-top: 42px;
+
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.footer-star {
+  color: var(--gold);
+}
+
+/* ========================================
+   COUNTDOWN
+======================================== */
+/* Countdown illustration */
+
+.countdown-illustration {
+  display: block;
+
+  width: min(100%, 480px);
+  height: auto;
+
+  margin: 0 auto 24px;
+
+  object-fit: contain;
+}
+
+.countdown-section {
+  padding: 90px 24px;
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(216, 194, 154, 0.15),
+      transparent 65%
+    ),
+    var(--ivory);
+}
+
+.countdown-section h2,
+.celebrations-section h2,
+.venue-section h2 {
+  margin: 15px 0 0;
+
+  color: var(--burgundy);
+  font-family: var(--display-font);
+  font-size: clamp(38px, 6vw, 58px);
+  font-weight: 400;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+
+  width: min(100%, 650px);
+  margin: 42px auto 0;
+}
+
+.countdown-item {
+  padding: 22px 8px;
+  border-top: 1px solid var(--light-gold);
+  border-bottom: 1px solid var(--light-gold);
+}
+
+.countdown-item > span {
+  color: var(--burgundy);
+  font-family: var(--display-font);
+  font-size: clamp(35px, 6vw, 55px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.countdown-item > p {
+  margin: 8px 0 0;
+
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   VENUE
+======================================== */
+
+.venue-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: 0 18px 90px;
+
+  text-align: center;
+
+  background: var(--ivory);
+}
+
+/* Romantic garden illustration */
+
+.venue-illustration {
+  display: block;
+
+  width: min(100%, 480px);
+  height: auto;
+
+  margin: 0 auto 20px;
+
+  object-fit: contain;
+}
+
+/* Venue heading */
+
+.venue-section h2 {
+  margin: 12px 0 0;
+
+  color: var(--burgundy);
+  font-family: var(--display-font);
+  font-size: clamp(42px, 6vw, 58px);
+  font-weight: 400;
+}
+
+.venue-tagline {
+  margin: 10px 0 0;
+
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: 21px;
+  font-style: italic;
+}
+
+.venue-divider {
+  margin: 24px auto;
+}
+
+/* Hotel details */
+
+.venue-section h3 {
+  margin: 0;
+
+  color: var(--burgundy);
+  font-family: var(--display-font);
+  font-size: clamp(27px, 4vw, 36px);
+  font-weight: 500;
+}
+
+.venue-section .venue-address {
+  margin: 12px 0 0;
+
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+/* Directions button */
+
+.venue-directions-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 44px;
+  margin-top: 26px;
+  padding: 0 25px;
+
+  color: #fffdf7;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+
+  background: var(--burgundy);
+  border: 1px solid var(--deep-burgundy);
+  border-radius: 999px;
+
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    transform 220ms ease;
+}
+
+.venue-directions-button:hover {
+  color: var(--sage-dark);
+  background: transparent;
+  border-color: var(--deep-burgundy);
+  transform: translateY(-2px);
+}
+
+.venue-note {
+  max-width: 440px;
+
+  margin: 26px 0 0;
+
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ========================================
+   WEDDING DAY SCHEDULE
+======================================== */
+
+.schedule-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: 80px 24px 90px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(216, 194, 154, 0.12),
+      transparent 65%
+    ),
+    var(--ivory);
+}
+
+/* Schedule illustration */
+
+.schedule-illustration {
+  display: block;
+
+  width: min(100%, 480px);
+  height: auto;
+
+  margin: -10px auto 12px;
+
+  object-fit: contain;
+}
+
+/* Heading */
+
+.schedule-title {
+  margin: 12px 0 0;
+
+  color: var(--burgundy);
+  font-family: var(--display-font);
+  font-size: clamp(42px, 6vw, 58px);
+  font-weight: 400;
+}
+
+.schedule-subtitle {
+  max-width: 460px;
+  margin: 12px auto 0;
+
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* Timeline */
+
+.schedule-timeline {
+  position: relative;
+
+  width: min(100%, 620px);
+  margin: 52px auto 0;
+
+  text-align: left;
+}
+
+.schedule-timeline::before {
+  position: absolute;
+  top: 16px;
+  bottom: 24px;
+  left: 23px;
+
+  width: 1px;
+
+  content: "";
+
+  background: var(--light-gold);
+}
+
+.schedule-item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 22px;
+
+  padding-bottom: 38px;
+}
+
+.schedule-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Numbered timeline markers */
+
+.schedule-marker {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 47px;
+  height: 47px;
+
+  color: var(--sage-dark);
+
+  font-family: var(--display-font);
+  font-size: 17px;
+
+  background: var(--ivory);
+  border: 1px solid var(--light-gold);
+  border-radius: 50%;
+}
+
+/* Event details */
+
+.schedule-details {
+  padding-top: 2px;
+}
+
+.schedule-time {
+  margin: 0 0 6px;
+
+  color: var(--gold);
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.schedule-details h3 {
+  margin: 0;
+
+  color: var(--burgundy);
+  font-family: var(--display-font);
+  font-size: clamp(25px, 4vw, 31px);
+  font-weight: 500;
+}
+
+.schedule-details > p:last-child {
+  max-width: 450px;
+  margin: 8px 0 0;
+
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Closing note */
+
+.schedule-note {
+  margin: 40px 0 0;
+
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* Mobile layout */
+
+@media (max-width: 700px) {
+  .schedule-section {
+    padding: 65px 20px 70px;
+  }
+
+  .schedule-illustration {
+    width: min(100%, 300px);
+  }
+
+  .schedule-subtitle {
+    font-size: 19px;
+  }
+
+  .schedule-timeline {
+    margin-top: 38px;
+  }
+
+  .schedule-item {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 16px;
+    padding-bottom: 32px;
+  }
+
+  .schedule-timeline::before {
+    left: 19px;
+  }
+
+  .schedule-marker {
+    width: 39px;
+    height: 39px;
+    font-size: 15px;
+  }
+
+  .schedule-details h3 {
+    font-size: 26px;
+  }
+
+  .schedule-details > p:last-child {
+    font-size: 17px;
+  }
+
+  .schedule-note {
+    font-size: 17px;
+  }
+}
+
+/* ========================================
+   A NOTE FROM US
+======================================== */
+
+.note-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: 80px 24px 70px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(216, 194, 154, 0.12),
+      transparent 65%
+    ),
+    var(--ivory);
+}
+
+/* Watercolor illustration */
+
+.note-illustration {
+  display: block;
+
+  width: min(100%, 430px);
+  height: auto;
+
+  margin: 0 auto 20px;
+
+  object-fit: contain;
+}
+
+/* Heading */
+
+.note-title {
+  margin: 12px 0 0;
+
+  color: var(--burgundy);
+  font-family: var(--display-font);
+  font-size: clamp(42px, 6vw, 58px);
+  font-weight: 400;
+}
+
+.note-intro {
+  max-width: 580px;
+  margin: 18px auto 0;
+
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: 21px;
+  line-height: 1.8;
+}
+
+.note-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  width: 160px;
+  margin: 28px auto;
+
+  color: var(--gold);
+}
+
+.note-divider::before,
+.note-divider::after {
+  flex: 1;
+  height: 1px;
+
+  content: "";
+  background: var(--light-gold);
+}
+
+/* Main message card */
+
+.note-card {
+  width: min(100%, 650px);
+  padding: 38px 42px;
+
+  background: rgba(243, 233, 217, 0.45);
+  border: 1px solid rgba(176, 141, 87, 0.45);
+}
+
+.note-ornament {
+  display: block;
+  margin-bottom: 10px;
+
+  color: var(--gold);
+  font-family: var(--display-font);
+  font-size: 42px;
+  line-height: 1;
+}
+
+.note-card h3,
+.wedding-tip h3 {
+  margin: 0;
+
+  color: var(--burgundy);
+  font-family: var(--display-font);
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.note-card > p {
+  margin: 18px 0 0;
+
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: 20px;
+  line-height: 1.85;
+}
+
+.note-card .note-signoff {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin-top: 28px;
+
+  color: var(--muted);
+  font-size: 19px;
+  font-style: italic;
+}
+
+.note-signoff span {
+  color: var(--burgundy);
+  font-family: var(--script-font);
+  font-size: 46px;
+  font-style: normal;
+  line-height: 1.2;
+}
+
+/* ========================================
+   WEDDING CLOSING SECTION
+======================================== */
+
+.wedding-footer {
+  width: 100%;
+  padding: 0 20px 40px;
+
+  text-align: center;
+
+  background: var(--ivory);
+}
+
+.closing-eyebrow {
+  margin: 0;
+
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+/* Floral artwork container */
+
+.closing-artwork {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Floral image */
+
+.closing-floral-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Names and text over the floral image */
+
+.closing-content {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px;
+}
+
+.closing-message {
+  margin: 0 0 11px;
+
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: clamp(15px, 2vw, 21px);
+  font-style: italic;
+}
+
+/* Couple's names */
+
+.closing-couple-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+
+  margin: 0;
+
+  color: var(--deep-burgundy);
+  font-family: var(--script-font);
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 400;
+  line-height: 0.78;
+}
+
+.closing-ampersand {
+  margin: 5px 0;
+
+  color: var(--gold);
+  font-family: var(--display-font);
+  font-size: 0.45em;
+  font-style: italic;
+  line-height: 1;
+}
+
+.closing-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 130px;
+  margin: 12px 0;
+
+  color: var(--gold);
+  font-size: 13px;
+}
+
+.closing-divider::before,
+.closing-divider::after {
+  flex: 1;
+  height: 1px;
+
+  content: "";
+  background: var(--light-gold);
+}
+
+.closing-date {
+  margin: 0;
+
+  color: var(--burgundy);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.closing-location {
+  margin: 7px 0 0;
+
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 700px) {
+  .wedding-footer {
+    padding: 40px 8px 30px;
+  }
+
+  .closing-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .closing-artwork {
+    margin-top: 12px;
+  }
+
+  .closing-content {
+    padding: 8px;
+  }
+
+  .closing-message {
+    margin-bottom: 7px;
+    font-size: clamp(12px, 3vw, 16px);
+  }
+
+  .closing-couple-names {
+    font-size: clamp(34px, 8vw, 55px);
+  }
+
+  .closing-ampersand {
+    margin: 3px 0;
+  }
+
+  .closing-divider {
+    width: 90px;
+    margin: 8px 0;
+  }
+
+  .closing-date {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .closing-location {
+    margin-top: 5px;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+  .closing-thank-you {
+    margin-top: 8px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .closing-content {
+    padding: 4px;
+  }
+
+  .closing-message {
+    font-size: 11px;
+  }
+
+  .closing-couple-names {
+    font-size: 32px;
+  }
+
+  .closing-divider {
+    margin: 5px 0;
+  }
+
+  .closing-date {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .closing-location {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 700px) {
+  .wedding-hero {
+    padding: 32px 18px;
+    background-position: center;
+  }
+
+  .hero-content {
+    max-width: 480px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .hero-ornament {
+    font-size: 34px;
+  }
+
+  .invitation-intro {
+    font-size: 21px;
+  }
+
+  .hero-names {
+    font-size: clamp(68px, 13vw, 88px);
+    letter-spacing: 0;
+  }
+
+  .hero-message {
+    font-size: 19px;
+  }
+
+  .hero-date > p {
+    font-size: 30px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-date-label,
+  .hero-location {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .luxury-button {
+    min-height: 44px;
+    padding: 0 23px;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .hero-bottom {
+    margin-top: 30px;
+    font-size: 8px;
+  }
+
+  .countdown-section,
+  .celebrations-section,
+  .venue-section {
+    padding: 70px 18px;
+  }
+
+  .countdown-grid {
+    gap: 8px;
+    margin-top: 30px;
+  }
+
+  .countdown-item {
+    padding: 16px 3px;
+  }
+
+  .countdown-item > p {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .celebration-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 35px;
+  }
+
+  .celebration-card {
+    padding: 38px 24px 30px;
+  }
+
+  .celebration-card h3 {
+    font-size: 28px;
+  }
+
+  .celebration-card > p {
+    min-height: 0;
+  }
+
+  .section-description {
+    font-size: 18px;
+  }
+
+  .wedding-footer {
+    padding: 40px 18px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 380px) {
+  .wedding-hero {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .hero-names {
+    font-size: 62px;
+  }
+
+  .hero-message {
+    font-size: 17px;
+  }
+
+  .hero-date > p {
+    font-size: 26px;
+    letter-spacing: 0;
+  }
+
+  .hero-date-label,
+  .hero-location {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .luxury-button {
+    gap: 8px;
+    padding: 0 18px;
+    font-size: 8px;
+    letter-spacing: 0.7px;
+  }
+
+  .countdown-grid {
+    gap: 4px;
+  }
+
+  .countdown-item > span {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .venue-section {
+    padding: 65px 18px 70px;
+  }
+
+  .venue-illustration {
+    width: min(100%, 300px);
+    margin-bottom: 16px;
+  }
+
+  .venue-tagline {
+    font-size: 19px;
+  }
+
+  .venue-section .venue-address {
+    font-size: 18px;
+  }
+
+  .venue-directions-button {
+    min-height: 43px;
+    padding: 0 22px;
+  }
+
+  .venue-note {
+    font-size: 18px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* Mobile layout */
+
+@media (max-width: 700px) {
+  .note-section {
+    padding: 60px 18px 55px;
+  }
+
+  .note-illustration {
+    width: min(100%, 340px);
+    margin-bottom: 14px;
+  }
+
+  .note-intro {
+    font-size: 19px;
+    line-height: 1.7;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .note-card {
+    padding: 30px 22px;
+  }
+
+  .note-card h3 {
+    font-size: 27px;
+  }
+
+  .note-card > p {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .note-signoff span {
+    font-size: 42px;
+  }
+
+  .wedding-tip {
+    padding: 25px 20px;
+  }
+
+  .wedding-tip h3 {
+    font-size: 25px;
+  }
+
+  .wedding-tip > p {
+    font-size: 18px;
+  }
+}

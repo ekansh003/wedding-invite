@@ -1,0 +1,16 @@
+/* Global wedding website styles are defined in App.css. */
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}

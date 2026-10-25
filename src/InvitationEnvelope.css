@@ -1,0 +1,172 @@
+.envelope-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
+  overflow: hidden;
+  background: #fbf5e9;
+}
+
+.cover-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: #fbf5e9;
+  border: none;
+  box-shadow: none;
+  isolation: isolate;
+}
+
+/* Image panels */
+
+.invitation-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 50%;
+  overflow: hidden;
+  background: #fbf5e9;
+  will-change: transform;
+}
+
+.invitation-panel-left {
+  left: 0;
+  border-right: 1px solid #b08d57;
+}
+
+.invitation-panel-right {
+  right: 0;
+  border-left: 1px solid #b08d57;
+}
+
+.invitation-panel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Ribbon */
+
+.ribbon-layer {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.ribbon-band {
+  display: none;
+}
+
+.ribbon-band-falling {
+  transform: translateY(85px);
+  opacity: 0;
+}
+
+/* Realistic satin bow image */
+
+.bow-button {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 5;
+
+  display: block;
+  width: min(100%, 480px);
+  padding: 0;
+
+  line-height: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+
+  /* Position the asymmetric image */
+  margin-left: 50%;
+  translate: -50% -30%;
+  transform-origin: center;
+}
+
+.bow-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+.bow-button:focus-visible {
+  outline: 2px solid #b08d57;
+  outline-offset: 5px;
+}
+
+.bow-button:disabled {
+  cursor: default;
+}
+
+/* Opening instruction */
+
+.cover-instruction {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  color: #a18459;
+  pointer-events: none;
+}
+
+.cover-instruction p {
+  margin: 0;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.cover-instruction > span {
+  font-size: 9px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 480px) {
+  .envelope-screen {
+    padding: 0;
+  }
+
+  .cover-frame {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+  .ribbon-band {
+    display: none;
+  }
+
+  .bow-button {
+    width: 78%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ribbon-band {
+    transition-duration: 0.01ms;
+  }
+}
